@@ -4,6 +4,8 @@ import './App.css'
 import Nav from './Nav'
 import BookList from './BookList'
 import BookDetails from './BookDetails'
+import Login from './login';
+import Account from './Account';
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState({})
@@ -23,6 +25,9 @@ const App = () => {
           />
         }
         />
+        <Route path='/login' element={<Login />}/>
+        <Route path='/account' element={<Account />}/>
+
 
       </Routes>
     </>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams, useNavigate } from 'react-router-dom'
 
 const BookList = (props) => {
   /* a use state to store the books */
@@ -15,8 +16,12 @@ const BookList = (props) => {
     getBooks();
   }, []);
 
+    const navigate = useNavigate();
+
   const showAnimalDetails = () => {
-    console.log('showing');
+    /* console.log('showing'); */
+
+    navigate('/books/:id');
   }
 
 
