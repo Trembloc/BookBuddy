@@ -15,6 +15,11 @@ const BookList = (props) => {
     getBooks();
   }, []);
 
+  const showAnimalDetails = () => {
+    console.log('showing');
+  }
+
+
   /* return a body that displays them */
   return (
     <>
@@ -24,6 +29,7 @@ const BookList = (props) => {
           return (
             <section key={book.id} onClick={() => { props.setSelectedBook(book) }}>
             <h2>{book.title}</h2>
+            <button onClick={ showAnimalDetails }>Show Details</button>
             </section>
             
           )
