@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const BookList = () => {
+const BookList = (props) => {
   /* a use state to store the books */
   const [allBooks, setAllBooks] = useState([]);
 
@@ -9,11 +9,16 @@ const BookList = () => {
     const getBooks = async () => {
       const booksObject = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books');
       const retrievedBooks = await booksObject.json();
-      console.log(retrievedBooks.books);
+/*       console.log(retrievedBooks.books); */
       setAllBooks(retrievedBooks.books)
     }
     getBooks();
   }, []);
+
+  const showAnimalDetails = () => {
+    console.log('showing');
+  }
+
 
   /* return a body that displays them */
   return (
@@ -22,7 +27,10 @@ const BookList = () => {
         allBooks.map((book) => {
 
           return (
+            <section key={book.id} onClick={() => { props.setSelectedBook(book) }}>
             <h2>{book.title}</h2>
+            <button onClick={ showAnimalDetails }>Show Details</button>
+            </section>
             
           )
       })
