@@ -8,7 +8,6 @@ const BookDetails = (props) => {
         <li>{props.selectedBook.author}</li>
         <li>{props.selectedBook.description}</li>
 {/*         <li>{props.selectedBook.available}</li> */}
-      <button onClick={() => { props.setSelectedBook({}) }}>Clear Selected Book</button>
       </ul>
     </section>
   )
