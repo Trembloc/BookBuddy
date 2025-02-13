@@ -8,10 +8,12 @@ const BookList = (props) => {
   /* fetch the Book names from the API */
   useEffect(() => {
     const getBooks = async () => {
-      const booksObject = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books');
-      const retrievedBooks = await booksObject.json();
-/*       console.log(retrievedBooks.books); */
-      setAllBooks(retrievedBooks.books)
+      const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books');
+/*       console.log(response); */
+      const responseObject = await response.json();
+      const retrievedBooks = responseObject.books
+/*       console.log(responseObject); */
+      setAllBooks(retrievedBooks)
     }
     getBooks();
   }, []);
