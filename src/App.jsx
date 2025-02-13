@@ -6,7 +6,7 @@ import BookList from './BookList'
 import BookDetails from './BookDetails'
 import Login from './login';
 import Account from './Account';
-
+import Register from './Register';
 const App = () => {
   const [selectedBook, setSelectedBook] = useState({})
   return (
@@ -20,13 +20,14 @@ const App = () => {
         <Route path='/books' element={<BookList setSelectedBook={setSelectedBook} />} />
         <Route path='/books/:id' element={
           <BookDetails
-          setSelectedBook={setSelectedBook}
-          selectedBook={selectedBook} 
+            setSelectedBook={setSelectedBook}
+            selectedBook={selectedBook}
           />
         }
         />
-        <Route path='/login' element={<Login />}/>
-        <Route path='/account' element={<Account />}/>
+        <Route path='/login' element={<Login />} />
+        <Route path='/account' element={<Account />} />
+        <Route path='/register' element={<Register/>}/>
 
 
       </Routes>
